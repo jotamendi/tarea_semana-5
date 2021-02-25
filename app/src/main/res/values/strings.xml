@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Petagram</string>
+    <!--Cardview mascota-->
+    <string name="dog_name1">Rocky</string>
+    <string name="dog_rate">10</string>
+    <string name="tv1_id"> dogName</string>
+    <string name="tv2_id">dogRate</string>
+    <string name="imgB1_id">wBone</string>
+    <string name="imgB2_id">yBone</string>
+    <!-- Menu-->
+    <string name="menu_t1">Contacto</string>
+    <string name="menu_t2">Acerca de</string>
+
+    <!-- formulario contaco-->
+    <string name="t1_nom">Nombre Completo</string>
+    <string name="t2_mail">@email</string>
+    <string name="t3_mensaje">Mensaje</string>
+    <string name="btn_text">Enviar comentario</string>
+
+    <!-- about-->
+    <string name="title_about1"> Acerca de Petagram:</string>
+    <string name="sobre_petagram"> Petagram es una App desarollada por JMDevs con el fin de
+         acercar a dueños de mascotas en una plataforma donde pudean intercambiar imagenes y
+        albumes de sus más fieles compañeros. El tener una mascota es todo un mundo y
+    petagram intenta proveer una plataforma pare éste, es parte de nuestra visón el intercambio entre
+        dueños sobre los distintos aspectos que conllevan tener una mascota y que estos se apoyen entre sí
+    con intercambio de información sobre las mejores veterinarias y parques para pasear etc.
+        Esperamos que aqui te encuentres con gente que comparta tu misma pasión por las mascotas y que se genere
+        una comunidad de dueños de macotas dispuestas a ayudarse e intercambiar experiencias entre otras cosas.</string>
+    <string name="title_about2"> Sobre JMDevs</string>
+    <string name="sobre_dev"> JMDevs es una pequeña companía de desarollo de software, actualmente estudiando para comenzar
+        el desarollo de aplicaciones moviles con el fin ultimo de generar productos que sean utiles para la sociedad ya sea
+        facilitando la vida de sus usuarios, o aportando algun tipo de entretenimiento. </string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

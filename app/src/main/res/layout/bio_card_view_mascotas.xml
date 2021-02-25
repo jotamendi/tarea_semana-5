@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMascota"
+    android:layout_width="@dimen/bio_cv_width"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/bio_bottom_margin"
+    android:layout_marginHorizontal="@dimen/bio_cv_horizontal_margin"
+    cardview:cardCornerRadius="@dimen/bio_corner_radius_cv"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/top_margin"
+        >
+
+        <ImageView
+            android:id="@+id/img_pet"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bio_cv_imgHeight"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pitbull_cachorro">
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_prim">
+
+            <TextView
+                android:id="@+id/postRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_txt"
+                android:text="@string/dog_rate"
+                android:textColor="@color/primary_txt"
+                android:textSize="@dimen/bio_text_size"
+                android:layout_marginLeft="@dimen/left_margin_txt"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="@dimen/left_margin_txt">
+            </TextView>
+
+            <ImageButton
+                android:id="@+id/yBone"
+                android:layout_width="@dimen/bio_btn_size2"
+                android:layout_height="@dimen/bio_btn_size2"
+                android:layout_marginHorizontal="@dimen/margin_btn"
+                android:background="@mipmap/yellow_dog_bone"
+                android:scaleType="centerCrop"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:clickable="false"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/right_margin_btn"
+                android:layout_marginEnd="@dimen/right_margin_btn">
+            </ImageButton>
+
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

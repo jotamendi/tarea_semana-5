@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+
+        <include
+            android:id="@+id/action_bar2"
+            layout="@layout/actionbar2"></include>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_form_sides"
+            android:layout_marginTop="@dimen/btn_padding_form_top"
+            android:layout_marginEnd="@dimen/padding_form_sides"
+            android:hint="@string/t1_nom"
+            android:layout_below="@id/action_bar2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_form_sides"
+            android:layout_marginTop="@dimen/padding_form_top"
+            android:layout_marginEnd="@dimen/padding_form_sides"
+            android:hint="@string/t2_mail"
+            android:layout_below="@id/text_input_layout_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            android:id="@+id/contacto_mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_marginStart="@dimen/padding_form_sides"
+            android:layout_marginTop="@dimen/padding_form_top"
+            android:layout_marginEnd="@dimen/padding_form_sides"
+            android:hint="@string/t3_mensaje"
+            android:layout_below="@id/text_input_layout_Email">
+
+            <!--edit text que toma el texto de entrada-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_siguiente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/btn_padding_form_top"
+            android:paddingBottom="@dimen/padding_form_bottom"
+            android:text="@string/btn_text"
+            android:layout_below="@id/contacto_mensaje"
+            android:onClick="sendMail"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
+
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="bottom_margin">10dp</dimen>
+    <dimen name="top_margin">5dp</dimen>
+    <dimen name ="cv_imgHeight">450dp</dimen>
+    <dimen name="corner_radius_cv">5dp</dimen>
+    <dimen name="cv_horizontal_margin">10dp</dimen>
+    <dimen name="dogName_leftMargin">68dp</dimen>
+    <dimen name="dogRate_rightMargin">68dp</dimen>
+    <dimen name="button_size1">42dp</dimen>
+    <dimen name="button_size2">50dp</dimen>
+    <dimen name="text_size1">35dp</dimen>
+    <dimen name="margin_btn">5dp</dimen>
+    <dimen name="margin_txt">10dp</dimen>
+    <dimen name="extended_margin_txt">132dp</dimen>
+    <dimen name="actionBarElevation">4dp</dimen>
+    <dimen name ="dog_paw_size">48dp</dimen>
+    <dimen name ="star_size">50dp</dimen>
+   <dimen name="star_hor_margin">30dp</dimen>
+    <dimen name ="paw_hor_margin">5dp</dimen>
+    <!-- fromulario contacto-->
+    <dimen name="padding_form_bottom">10dp</dimen>
+    <dimen name="padding_form_sides">10dp</dimen>
+    <dimen name="padding_form_top">10dp</dimen>
+    <dimen name="btn_padding_form_top">30dp</dimen>
+    <dimen name="padding_dp_bottom">5dp</dimen>
+    <dimen name="tx_size_dp">20dp</dimen>
+    <!-- about-->
+    <dimen name="t1_size">20dp</dimen>
+    <dimen name="v_margin_text">30dp</dimen>
+    <dimen name="h_margin_text">10dp</dimen>
+    <!-- bio card view-->
+    <dimen name="bio_bottom_margin">5dp</dimen>
+    <dimen name="bio_corner_radius_cv">5dp</dimen>
+    <dimen name="bio_cv_horizontal_margin">5dp</dimen>
+    <dimen name="bio_cv_imgHeight">125dp</dimen>
+    <dimen name="bio_cv_width">125dp</dimen>
+    <dimen name="bio_btn_size2">40dp</dimen>
+    <dimen name="bio_text_size">35dp</dimen>
+    <dimen name="left_margin_txt">16dp</dimen>
+    <dimen name="right_margin_btn">16dp</dimen>
+    <dimen name ="margin_pet_name_bottom">5dp</dimen>
+</resources>
