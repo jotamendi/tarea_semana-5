@@ -1,5 +1,6 @@
 package com.jmdevs.petagram.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.jmdevs.petagram.R;
 import com.jmdevs.petagram.adapter.mascotaAdapter;
 import com.jmdevs.petagram.adapter.mascotaBioAdapter;
+import com.jmdevs.petagram.db.BaseDatos;
 import com.jmdevs.petagram.pojo.mascota;
 import com.jmdevs.petagram.pojo.post;
 import com.jmdevs.petagram.presentador.IPet_FeedFragPresenter;
@@ -66,10 +68,11 @@ public class pet_profile extends Fragment implements IPet_ProfileView{
     }
 
     @Override
-    public mascotaBioAdapter crearMProfAdapter(mascota m1) {
+    public mascotaBioAdapter crearMProfAdapter(mascota m1, Context c) {
         petName.setText(m1.getNombre());
         circProfPic.setImageResource(m1.getPic());
-        mascotaBioAdapter mBAdapt = new mascotaBioAdapter(m1.getPosts(), getActivity());
+        BaseDatos bd = new BaseDatos(c);
+        mascotaBioAdapter mBAdapt = new mascotaBioAdapter(bd.getMascotaPosts(m1.getId_pet()), getActivity());
         return mBAdapt;
     }
 

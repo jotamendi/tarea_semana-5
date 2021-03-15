@@ -59,20 +59,21 @@
             android:layout_toLeftOf="@id/dogName">
         </ImageButton>
 
-        <TextView
-            android:id="@+id/dogName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_txt"
-            android:text="@string/dog_name1"
-            android:textSize="@dimen/text_size1"
-            android:textColor="@color/primary_txt"
-            android:layout_toRightOf="@id/wBone">
+            <TextView
+                android:id="@+id/dogName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_txt"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/wBone"
+                android:text="@string/dog_name1"
+                android:textColor="@color/primary_txt"
+                android:textSize="@dimen/text_size1">
 
 
-        </TextView>
+            </TextView>
 
-        <TextView
+            <TextView
             android:id="@+id/dogRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

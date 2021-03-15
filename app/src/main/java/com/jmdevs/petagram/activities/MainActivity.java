@@ -20,6 +20,8 @@ import java.util.Objects;
 import com.google.android.material.tabs.TabLayout;
 import com.jmdevs.petagram.R;
 import com.jmdevs.petagram.adapter.pageAdapter;
+import com.jmdevs.petagram.db.BaseDatos;
+import com.jmdevs.petagram.db.constructorMascotas;
 import com.jmdevs.petagram.fragments.*;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar ;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private constructorMascotas CM;
+    private BaseDatos BD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         setUpViewPager();
+
+        /*BD = new BaseDatos(getBaseContext());
+        CM.insertMascotas(BD);*/
 
         if(toolbar != null){
             setSupportActionBar(toolbar);

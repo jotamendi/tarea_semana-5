@@ -12,18 +12,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jmdevs.petagram.R;
+import com.jmdevs.petagram.db.BaseDatos;
 import com.jmdevs.petagram.pojo.mascota;
+import com.jmdevs.petagram.pojo.post;
 
 import java.util.ArrayList;
 
 public class mascotaAdapter extends RecyclerView.Adapter<mascotaAdapter.mascotaViewHolder> {
 
-    ArrayList<mascota> mascotas;
-    boolean clicked = false;
     private Context context;
+    ArrayList<mascota> mascotas;
+    ArrayList<post> mPosts;
 
-    public mascotaAdapter(ArrayList<mascota> mascotas, Context c){
+    public  mascotaAdapter(ArrayList<mascota> mascotas, Context c){
         this.mascotas = mascotas;
+        /*this.mPosts = posts*/
         context = c;
     }
 
@@ -39,18 +42,26 @@ public class mascotaAdapter extends RecyclerView.Adapter<mascotaAdapter.mascotaV
     //asocia c/elem de la lista con c/view
     public void onBindViewHolder(@NonNull mascotaViewHolder holder, int position) {
         mascota mascot = mascotas.get(position);
-        holder.nameTxt.setText(String.valueOf(mascot.getNombre()));
-        holder.rateTxt.setText(String.valueOf(mascot.getRate().toString()));
-        holder.dogPic.setImageResource(mascot.getPic());
+        ArrayList<post> pts = mascot.getPosts();
+
+        if(!pts.isEmpty()) {
+            post p = pts.get(pts.size()-1);
+            holder.nameTxt.setText(String.valueOf(mascot.getNombre()));
+            holder.rateTxt.setText(String.valueOf(p.getRate()));
+            holder.dogPic.setImageResource(p.getPic());
+        }
 
         holder.boneRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(holder.boneRate.getVisibility() == View.VISIBLE){
-                    mascot.incRate();
-                    holder.rateTxt.setText(String.valueOf(mascot.getRate().toString()));
+                    post p = pts.get(pts.size() - 1);
+                    mascot.incRate(p.getPost_id(), context);
+                    holder.rateTxt.setText(String.valueOf(mascot.getRate(p.getPost_id(),context).toString()));
                     holder.boneRate.setVisibility(view.INVISIBLE);
                     holder.boneUnrate.setVisibility(view.VISIBLE);
+                    BaseDatos bd = new BaseDatos(context);
+                    bd.addPostToLast5Fav(p.getPost_id(), p.getId_pet());
                 }
             }
         });
@@ -59,10 +70,14 @@ public class mascotaAdapter extends RecyclerView.Adapter<mascotaAdapter.mascotaV
             @Override
             public void onClick(View view) {
                 if(holder.boneUnrate.getVisibility() == view.VISIBLE){
-                    mascot.decRate();
-                    holder.rateTxt.setText(String.valueOf(mascot.getRate().toString()));
+                    ArrayList<post> pts = mascot.getPosts();
+                    post p = pts.get(pts.size() - 1);
+                    mascot.decRate(p.getPost_id(), context);
+                    holder.rateTxt.setText(String.valueOf(mascot.getRate(p.getPost_id(),context).toString()));
                     holder.boneRate.setVisibility(view.VISIBLE);
                     holder.boneUnrate.setVisibility(view.INVISIBLE);
+                    BaseDatos bd = new BaseDatos(context);
+                    bd.undoPostLikeToLast5Fav(p.getPost_id(), p.getId_pet());
                 }
             }
         });
@@ -72,6 +87,7 @@ public class mascotaAdapter extends RecyclerView.Adapter<mascotaAdapter.mascotaV
     @Override
     //cant de elems que tiene mi lista de mascotas
     public int getItemCount() {
+        /*mPosts.size()*/
         return mascotas.size();
     }
 

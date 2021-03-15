@@ -17,11 +17,13 @@ public class Pet_FeedFragPresenter implements  IPet_FeedFragPresenter{
     private constructorMascotas cM;
     private Context context;
     private ArrayList<mascota> mascotas;
+    private ArrayList<post> posts;
 
     public Pet_FeedFragPresenter(IPet_FeedFragView iPet_feedFragView, Context context){
         this.iPet_FeedFragView = iPet_feedFragView;
         this.context = context;
-        ObtenerMascotasBD();
+        /*ObtenerMascotasBD();*/
+        obtenerAllPosts();
     }
 
     @Override
@@ -31,9 +33,15 @@ public class Pet_FeedFragPresenter implements  IPet_FeedFragPresenter{
         mostrarMascotasRV();
     }
 
+    public void obtenerAllPosts(){
+        cM = new constructorMascotas(context);
+        posts = cM.getAllPosts();
+        mostrarMascotasRV();
+    }
+
     @Override
     public void mostrarMascotasRV() {
-        iPet_FeedFragView.inicializarAdaptadorRV(iPet_FeedFragView.crearMAdapter(mascotas));
+        iPet_FeedFragView.inicializarAdaptadorRV(iPet_FeedFragView.crearMAdapter(posts));
         iPet_FeedFragView.generarLinearLayoutVertical();
     }
 

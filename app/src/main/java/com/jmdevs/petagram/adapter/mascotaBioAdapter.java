@@ -17,7 +17,9 @@ import com.jmdevs.petagram.pojo.mascota;
 import com.jmdevs.petagram.pojo.post;
 import java.util.ArrayList;
 
-public class mascotaBioAdapter extends RecyclerView.Adapter<mascotaBioAdapter.mascotaBioViewHolder> {
+public class
+
+mascotaBioAdapter extends RecyclerView.Adapter<mascotaBioAdapter.mascotaBioViewHolder> {
 
     private ArrayList<mascota> mascotas;
     private ArrayList<post> posts;

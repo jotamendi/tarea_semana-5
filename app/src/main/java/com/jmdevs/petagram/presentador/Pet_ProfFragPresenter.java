@@ -26,7 +26,8 @@ public class Pet_ProfFragPresenter implements IPet_ProfFragPresenter{
     @Override
     public void ObtenerMascotaBD() {
         cM = new constructorMascotas(context);
-        mascot = cM.obtenerMascota(0);
+        mascot = cM.obtenerMascota(1);
+
         mostrarPostsRV();
     }
 
@@ -38,7 +39,7 @@ public class Pet_ProfFragPresenter implements IPet_ProfFragPresenter{
 
     @Override
     public void mostrarPostsRV() {
-        iPet_ProfileFragView.inicializarPorfAdaptadorRV(iPet_ProfileFragView.crearMProfAdapter(mascot));
+        iPet_ProfileFragView.inicializarPorfAdaptadorRV(iPet_ProfileFragView.crearMProfAdapter(mascot, context));
         iPet_ProfileFragView.generarGridVertical();
     }
 }
